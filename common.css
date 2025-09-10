@@ -1,0 +1,114 @@
+ /* CSS Reset */
+ * {
+ margin: 0;
+padding: 0;
+ box-sizing: border-box;
+ font-family: 'Arial', sans-serif;
+}
+        
+body {
+line-height: 1.6;
+color: #333;
+}
+
+ /* Header Styles */
+ header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0066cc;
+}
+
+.logo span {
+    color: #ff6600;
+}
+
+.phone {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-top: 15px;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 8px 12px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    color: #0066cc;
+}
+
+/* Login/Register Buttons */
+.auth-buttons {
+    display: flex;
+    margin-left: auto;
+}
+
+.login-btn, .register-btn {
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin-left: 10px;
+}
+
+.login-btn {
+    background-color: #0066cc;
+    color: #ffffff;
+    border: 1px solid #0066cc;
+}
+
+.login-btn:hover {
+    background-color: #325f8c;
+    color: white;
+}
+
+.register-btn {
+    background-color: #ff6600;
+    color: white;
+    border: 1px solid #ff6600;
+}
+
+.register-btn:hover {
+    background-color: #e65c00;
+    color: white;
+    border-color: #e65c00;
+}
