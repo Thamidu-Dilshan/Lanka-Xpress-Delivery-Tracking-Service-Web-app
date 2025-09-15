@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompt Xpress - Courier Service</title>
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="home.css">
-       <link rel="stylesheet" href="footer.css" />
-   
+    <title>Lanka Xpresss Delivery Service</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="footer.css" />
 </head>
 <body>
+
     <header>
         <div class="container">
             <div class="header-top">
@@ -18,44 +21,63 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="branch.html">Branch Network</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Track Your Item</a></li>
                     <div class="auth-buttons">
                         <li><a href="#" class="login-btn">Login</a></li>
-                        <li><a href="signup.html" class="register-btn">Register</a></li>
+                        <li><a href="signup.php" class="register-btn">Register</a></li>
                     </div>
                 </ul>
             </nav>
         </div>
     </header>
     
-    <section class="hero">
-        <div class="container">
-            <h1>Speed, Accuracy and Core</h1>
-            <p>Your reliable courier service partner in Sri Lanka</p>
-            <a href="#" class="btn">Track Your Package</a>
-        </div>
-    </section>
-    
-    <section class="about">
-        <div class="container">
-            <h2>Welcome to Lanka Xpress</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>The Company was established in 2015 and is backed by an experienced management team and staff where the experience is in the range 10 to 30 years in the courier business.</p>
-                    <p>The Company was incorporated to address the vacuum in the market in providing efficient, effective and customer friendly courier service to public and private sector organizations and individuals across the island.</p>
-                    <a href="#" class="btn" style="margin-top: 20px;">Learn More</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Prompt Xpress Team">
-                </div>
+    <div style="width: 100%; display:flex; justify-content: center; align-items: center;margin: 50px;">
+        <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form action="signup.php" method="POST">
+
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
-        </div>
-    </section>
     
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+               
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+    
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+    
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm_password" required>
+            </div>
+    
+            <button type="submit" class="signup-btn">Sign Up</button>
+    
+      
+            <div class="aaa">
+                <p>Already Have An Account?
+                    <a href="userlogin.php">Login</a>
+                </p>
+            </div>
+        </form>
+        </div>
+        </div>
+        </div>
+
 <footer class="footer" >
         <div class="footer-main">
           <div class="footer-section programs" style="margin-left: 100px;">
@@ -103,11 +125,9 @@
            </div>
           </div>
           </div>
-    
 
-      
-        <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
       </footer>
+
 </body>
 </html>

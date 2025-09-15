@@ -1,0 +1,86 @@
+/* Signup Container */
+.signup-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(12, 11, 11, 0.268);
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Heading */
+.signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* Input Groups */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 0.5px solid #6604f8;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input focus effect */
+.input-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* Signup Button */
+.signup-btn {
+    background: linear-gradient(135deg, #007bff, #0056d2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.signup-btn:hover {
+    background: linear-gradient(135deg, #0056d2, #003c99);
+    transform: scale(1.03);
+}
+
+/* Login link section */
+.aaa {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.aaa a {
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.aaa a:hover {
+    color: #0056d2;
+    text-decoration: underline;
+}
