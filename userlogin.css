@@ -1,0 +1,128 @@
+/* ===== SCOPED LOGIN PAGE STYLING ===== */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+}
+
+/* Login Container */
+.login-page .login-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 80px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.312);
+    text-align: center;
+    animation: loginFadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.login-page .login-container h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Input Container */
+.login-page .input-container {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.login-page .input-container label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.login-page .input-container input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 15px;
+    background: #f9f9f9;
+    transition: 0.3s ease-in-out;
+}
+
+/* Focus Effect */
+.login-page .input-container input:focus {
+    border-color: #ff7b00;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
+    outline: none;
+}
+
+/* Login Button */
+.login-page .btnlogin {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff7b00, #ff3c00);
+    box-shadow: 0 5px 15px rgba(255, 60, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.login-page .btnlogin:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ff3c00, #ff0000);
+    box-shadow: 0 8px 18px rgba(255, 0, 0, 0.5);
+}
+
+/* Error Message */
+.login-page .login-container p {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: red;
+}
+
+/* Animation */
+@keyframes loginFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes loginBgGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .login-page .login-container {
+        padding: 30px 20px;
+    }
+    .login-page .login-container h2 {
+        font-size: 24px;
+    }
+    .login-page .btnlogin {
+        font-size: 16px;
+    }
+}
