@@ -1,0 +1,129 @@
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 40px 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .footer-main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .footer-left {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex: 1;
+  }
+  
+  .logo-box img {
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+  }
+  
+  .programs h3 {
+    color: #eaa54b;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .programs ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .programs li {
+    margin: 8px 0;
+  }
+  
+  .programs a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+  }
+  
+  .programs a:hover {
+    color: #00e6b8;
+  }
+  
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    flex: 1;
+  }
+  
+  .contact h3 {
+    color: #eaa54b;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .contact p {
+    margin: 8px 0;
+    font-size: 15px;
+  }
+  
+  .contact a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  .contact a:hover {
+    color: #00e6b8;
+  }
+  
+  .social {
+    margin-top: 20px;
+  }
+  
+  .social span {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .social-icons a {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #ccc;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #00e6b8;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 30px;
+
+  }
+  
+  .icons{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+  }
+
+.footer-logo{
+  justify-content: left;
+  display: flex;
+ 
+}
+
+
+ 
