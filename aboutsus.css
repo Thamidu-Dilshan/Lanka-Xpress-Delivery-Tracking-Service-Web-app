@@ -70,14 +70,19 @@ body {
   position: relative;
   flex: 1 1 45%;
   min-height: 450px;
+  display: flex;
+  justify-content: right; /* center the image horizontally */
+  align-items: right;     /* center the image vertically */
 }
 
 .about-image img {
-  width: 100%;
-  height: 100%;
+  width: 80%; /* make the image smaller */
+  height: 100%; /* maintain aspect ratio */
   object-fit: cover;
   display: block;
+  
 }
+
 /* ===== Animations ===== */
 @keyframes fadeInLeft {
   from {
@@ -116,5 +121,10 @@ body {
     width: 90%;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .about-image img {
+    width: 90%; /* adjust image size for smaller screens */
+    height: auto;
   }
 }
