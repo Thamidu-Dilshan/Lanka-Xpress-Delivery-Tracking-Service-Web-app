@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li><a href="#">Track Your Item</a></li>
                 <li class="auth-buttons">
                     <a href="userlogin.php" class="login-btn">Login</a>
-                    <a href="signup.php" class="register-btn">Register</a>
+                    <a href="signup.html" class="register-btn">Register</a>
                 </li>
             </ul>
         </nav>
