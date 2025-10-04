@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul class="nav-links">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="branch.html">Branch Network</a></li>
+                <li><a href="branch.php">Branch Network</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Track Your Item</a></li>
                 <li class="auth-buttons">
