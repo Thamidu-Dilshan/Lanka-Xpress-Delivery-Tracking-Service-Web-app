@@ -1,0 +1,141 @@
+/* ===== Contact Page Styling ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-section {
+  padding: 80px 5%;
+  background-color: #fafafa;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Left Info ===== */
+.contact-info {
+  flex: 1 1 35%;
+  font-size: 16px;
+}
+
+.contact-info h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.contact-info strong {
+  color: #d32f2f;
+}
+
+.hours li span {
+  font-weight: 600;
+  color: #444;
+}
+
+/* ===== Right Form ===== */
+.contact-form {
+  flex: 1 1 60%;
+}
+
+.contact-form h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #000;
+  text-align: center;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.contact-form .row {
+  display: flex;
+  gap: 15px;
+}
+
+.contact-form button {
+  background: #d32f2f;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #b71c1c;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-form .row {
+    flex-direction: column;
+  }
+}

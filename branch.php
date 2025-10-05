@@ -44,7 +44,7 @@ $conn->close();
                     <li><a href="home.html">Home</a></li>
                     <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="branch.html">Branch Network</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="contactus.php">Contact Us</a></li>
                     <li><a href="#">Track Your Item</a></li>
                     <div class="auth-buttons">
                         <li><a href="userlogin.php" class="login-btn">Login</a></li>
