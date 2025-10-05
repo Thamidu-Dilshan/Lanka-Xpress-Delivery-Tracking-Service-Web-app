@@ -32,6 +32,7 @@ $conn->close();
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="common.css" />
   <link rel="stylesheet" href="network.css" />
+  <link rel="stylesheet" href="footer.css" />
   <header>
         <div class="container">
             <div class="header-top">
@@ -104,6 +105,53 @@ $conn->close();
     });
   });
 </script>
+
+ <footer class="footer">
+    <div class="footer-main">
+        <div class="footer-section programs" style="margin-left: 100px;">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="branch.html">Branch Network</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Track Your Item</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact" style="margin-right: 100px;margin-top: 50px;">
+            <h3>Contact Us</h3>
+            <p>📞 +94 112 123 456</p>
+            <p>✉️ <a href="mailto:info@lankaxpress@gmail.com">info@lankaxpress@gmail.com</a></p>
+            <p>📍 No 50, Galle Rd, Colombo 6, Sri Lanka</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-logo">
+            <a href="home.html">
+                <img src="images/Lanka.png" alt="footer logo" style="width: 100px; height: auto; margin-left: 50px;">
+            </a>
+
+            <div style="margin-left: 340px;">
+                <div class="footer-copy">
+                    <p>© 2025 Lanka Xpress Delivery Service. All rights reserved.</p>
+                </div>
+
+                <div class="footer-social">
+                    <span>Follow us</span>
+                    <div class="social-icons">
+                        <img src="images/facebook icon.jpeg" alt="facebook" class="icons">
+                        <img src="images/insta.jpeg" alt="instagram" class="icons">
+                        <img src="images/whatsapp logo.jpeg" alt="whatsapp" class="icons">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</footer>
 
 </body>
 </html>
