@@ -1,0 +1,155 @@
+/* ===== Branch Network Page Styling (Scoped) ===== */
+
+/* Animated Background for Branch Page */
+.branch-page {
+  background: whitesmoke;
+  background-size: 400% 400%;
+  animation: bgShift 10s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+/* ===== Branch Container ===== */
+.branch-page .branch-container {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease-in-out;
+  margin-top: 40px;
+}
+
+/* ===== Page Header ===== */
+.branch-page .page-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.branch-page .page-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #d32f2f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.branch-page .page-header .meta {
+  font-size: 15px;
+  color: #555;
+  margin-top: 10px;
+  background: #fff3f3;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== Table Styling ===== */
+.branch-page table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.branch-page thead {
+  background: linear-gradient(90deg, #d32f2f, #f57c00);
+  color: white;
+  text-transform: uppercase;
+}
+
+.branch-page thead th {
+  padding: 15px;
+  font-weight: 600;
+  text-align: left;
+  font-size: 15px;
+}
+
+.branch-page tbody tr {
+  transition: all 0.3s ease;
+}
+
+.branch-page tbody tr:nth-child(even) {
+  background-color: rgba(245, 245, 245, 0.8);
+}
+
+.branch-page tbody td {
+  padding: 14px 16px;
+  font-size: 15px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===== Hover Effects ===== */
+.branch-page tbody tr:hover {
+  background: #ffe0b2;
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .branch-page {
+    padding: 20px;
+  }
+
+  .branch-page table,
+  .branch-page thead,
+  .branch-page tbody,
+  .branch-page th,
+  .branch-page td,
+  .branch-page tr {
+    display: block;
+  }
+
+  .branch-page thead {
+    display: none;
+  }
+
+  .branch-page tbody tr {
+    margin-bottom: 20px;
+    background: #fffdf9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 15px;
+  }
+
+  .branch-page tbody td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  .branch-page tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #d32f2f;
+  }
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

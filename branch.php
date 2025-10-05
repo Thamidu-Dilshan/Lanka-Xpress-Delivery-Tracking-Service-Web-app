@@ -31,7 +31,7 @@ $conn->close();
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="common.css" />
-  <link rel="stylesheet" href="branch.css" />
+  <link rel="stylesheet" href="network.css" />
   <header>
         <div class="container">
             <div class="header-top">
@@ -56,34 +56,35 @@ $conn->close();
 </head>
 <body>
 
-<div class="container">
-  <div class="page-header">
-    <h1>Branch Network</h1>
-    <div class="meta">Showing <?php echo count($branches); ?> branches</div>
-  </div>
+<main class="branch-page">
+    <div class="branch-container">
+      <div class="page-header">
+        <h1>Branch Network</h1>
+        <div class="meta">Showing <?php echo count($branches); ?> branches</div>
+      </div>
 
-  <!-- Branch table -->
-  <table id="branches" class="display" style="width:100%">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Branch</th>
-        <th>Mobile</th>
-        <th>Landline</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach($branches as $b): ?>
-        <tr>
-          <td><?php echo htmlspecialchars($b['id']); ?></td>
-          <td><?php echo htmlspecialchars($b['branch']); ?></td>
-          <td><?php echo htmlspecialchars($b['mobile']); ?></td>
-          <td><?php echo htmlspecialchars($b['landphone']); ?></td>
-        </tr>
-      <?php endforeach; ?>
-    </tbody>
-  </table>
-</div>
+      <table id="branches" class="display">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Branch</th>
+            <th>Mobile</th>
+            <th>Landline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach($branches as $b): ?>
+          <tr>
+            <td><?php echo htmlspecialchars($b['id']); ?></td>
+            <td><?php echo htmlspecialchars($b['branch']); ?></td>
+            <td><?php echo htmlspecialchars($b['mobile']); ?></td>
+            <td><?php echo htmlspecialchars($b['landphone']); ?></td>
+          </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+  </main>
 
 <!-- jQuery + DataTables JS -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
