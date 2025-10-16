@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: linear-gradient(to right, #e9f0f7, #f8fbff);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 60px;
+    color: #2c3e50;
+}
+
+form {
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.6s ease;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+    font-size: 28px;
+    font-weight: 700;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 10px;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd6dd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #fdfdfd;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+input[disabled] {
+    background-color: #f1f1f1;
+    color: #666;
+    cursor: not-allowed;
+}
+
+input[type="radio"] {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.radio-group {
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(to right, #2980b9, #27ae60);
+    transform: scale(1.02);
+}
+
+.message {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #27ae60;
+    font-size: 15px;
+}
+
+.link-bar {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #216f9c;
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

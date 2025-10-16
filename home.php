@@ -35,7 +35,7 @@
         <?php } ?>
 
           <?php if (isset($_SESSION['user'])  ) { ?>
-            <a href="" class="register-btn"> Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
+            <a href="profile.php" class="register-btn"> Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
             
         <?php } else { ?>
           <li><a href="signup.html" class="register-btn">Sign Up</a></li>
