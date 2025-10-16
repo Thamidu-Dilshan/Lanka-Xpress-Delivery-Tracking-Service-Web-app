@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    ?>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,15 +22,24 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="aboutus.php">About Us</a></li>
                     <li><a href="branch.php">Branch Network</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="contactus.php">Contact Us</a></li>
                     <li><a href="#">Track Your Item</a></li>
                     <div class="auth-buttons">
-                        <li><a href="userlogin.php" class="login-btn">Login</a></li>
-                        <li><a href="signup.html" class="register-btn">Register</a></li>
-                    </div>
+                    <?php if (isset($_SESSION['user'])  ) { ?>
+            <li><a href="logout.php" class="login-btn" >Logout</a></li>
+        <?php } else { ?>
+          <li><a href="userlogin.php" class="login-btn" >Login</a></li>
+        <?php } ?>
+
+          <?php if (isset($_SESSION['user'])  ) { ?>
+            <a href="" class="register-btn"> Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
+            
+        <?php } else { ?>
+          <li><a href="signup.html" class="register-btn">Sign Up</a></li>
+        <?php } ?>
                 </ul>
             </nav>
         </div>
@@ -70,10 +83,10 @@
         <div class="footer-section programs" style="margin-left: 100px;">
             <h3>Navigation</h3>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="branch.html">Branch Network</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="aboutus.php">About Us</a></li>
+                <li><a href="branch.php">Branch Network</a></li>
+                <li><a href="contactus.php">Contact Us</a></li>
                 <li><a href="#">Track Your Item</a></li>
             </ul>
         </div>
@@ -88,7 +101,7 @@
 
     <div class="footer-bottom">
         <div class="footer-logo">
-            <a href="home.html">
+            <a href="home.php">
                 <img src="images/Lanka.png" alt="footer logo" style="width: 100px; height: auto; margin-left: 50px;">
             </a>
 

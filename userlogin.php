@@ -10,10 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = "1234";
     $dbname = "delivery_db";
 
-    // Create connection
+   
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Check connection
+    
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_email = $_POST['username'];
     $user_password = $_POST['password'];
 
-    // Prepare and execute query
+   
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $user_email);
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user'] = $row['name'];
             echo "<script>
                 alert('User Login successful.');
-                window.location.href = 'home.html';
+                window.location.href = 'home.php';
             </script>";
             exit();
         } else {
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-<!-- Header -->
+
 <header>
     <div class="container">
         <div class="header-top">
@@ -71,8 +71,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="aboutus.php">About Us</a></li>
                 <li><a href="branch.php">Branch Network</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Track Your Item</a></li>
@@ -85,17 +85,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </header>
 
-<!-- Login Page -->
+
 <div class="login-page">
     <div class="login-container">
         <h2>Login</h2>
 
-        <!-- Display PHP error message -->
+      
         <?php if($message != "") { ?>
             <p style="color:red; font-weight:600; margin-bottom:15px;"><?php echo $message; ?></p>
         <?php } ?>
 
-        <!-- Login Form -->
+        
         <form method="POST" action="userlogin.php">
             <div class="input-container">
                 <label for="username">Username</label>
@@ -116,15 +116,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </div>
 
-<!-- Footer -->
+
 <footer class="footer">
     <div class="footer-main">
         <div class="footer-section programs" style="margin-left: 100px;">
             <h3>Navigation</h3>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="branch.html">Branch Network</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="aboutus.php">About Us</a></li>
+                <li><a href="branch.php">Branch Network</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Track Your Item</a></li>
             </ul>
@@ -140,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="footer-bottom">
         <div class="footer-logo">
-            <a href="home.html">
+            <a href="home.php">
                 <img src="images/Lanka.png" alt="footer logo" style="width: 100px; height: auto; margin-left: 50px;">
             </a>
 

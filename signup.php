@@ -33,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$name', '$email', '$phone', '$hashed_password')";
 
         if ($conn->query($sql) === TRUE) {
-            $message = "Signup successful. <a href='home.html'>Click here to login</a>";
-            echo "<script>alert('Signup successful.'); window.location.href='home.html';</script>";
+            $message = "Signup successful. <a href='home.php'>Click here to login</a>";
+            echo "<script>alert('Signup successful.'); window.location.href='home.php';</script>";
         } else {
             echo "<script>alert('Signup failed: " . $conn->error . "'); window.history.back();</script>";
         }

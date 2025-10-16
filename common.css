@@ -87,7 +87,7 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s;
-    margin-left: 10px;
+    margin-left: 1000px;
 }
 
 .login-btn {
