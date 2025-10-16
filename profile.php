@@ -61,12 +61,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_param("ss", $hashedPassword, $loggedInName);
             $stmt->execute();
             $stmt->close();
-            $updateMessage = "✅ Profile and password updated successfully.";
+            $updateMessage = "Profile and password updated successfully.";
         } else {
-            $updateMessage = "❌ Current password is incorrect.";
+            $updateMessage = "Current password is incorrect.";
         }
     } else {
-        $updateMessage = "✅ Profile updated successfully.";
+        $updateMessage = "Profile updated successfully.";
     }
 
     // Refresh session name if updated
