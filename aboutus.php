@@ -14,36 +14,34 @@
     <link rel="stylesheet" href="footer.css" />
 </head>
 <body>
-   <header>
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">Lanka <span>Xpress</span></div>
-                <div class="phone">+94 112 123 456</div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="home.php">Home</a></li>
-                    <li><a href="aboutus.php">About Us</a></li>
-                    <li><a href="branch.php">Branch Network</a></li>
-                    <li><a href="contactus.php">Contact Us</a></li>
-                    <li><a href="#">Track Your Item</a></li>
-                    <div class="auth-buttons">
-                    <?php if (isset($_SESSION['user'])  ) { ?>
-            <li><a href="logout.php" class="login-btn" >Logout</a></li>
-        <?php } else { ?>
-          <li><a href="userlogin.php" class="login-btn" >Login</a></li>
-        <?php } ?>
+<header>
+    <div class="container">
+      <div class="header-top">
+        <div class="logo">Lanka <span>Xpress</span></div>
+        <div class="phone">+94 112 123 456</div>
+      </div>
 
-          <?php if (isset($_SESSION['user'])  ) { ?>
-            <a href="" class="register-btn"> Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
-            
-        <?php } else { ?>
-          <li><a href="signup.html" class="register-btn">Sign Up</a></li>
-        <?php } ?>
-                </ul>
-            </nav>
+      <nav>
+        <ul>
+          <li><a href="home.php">Home</a></li>
+          <li><a href="aboutus.php">About Us</a></li>
+          <li><a href="branch.php">Branch Network</a></li>
+          <li><a href="contactus.php">Contact Us</a></li>
+          <li><a href="#">Track Your Item</a></li>
+        </ul>
+
+        <div class="auth-buttons">
+          <?php if (isset($_SESSION['user'])) { ?>
+            <a href="logout.php" class="login-btn">Logout</a>
+            <a href="#" class="register-btn">Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
+          <?php } else { ?>
+            <a href="userlogin.php" class="login-btn">Login</a>
+            <a href="signup.html" class="register-btn">Sign Up</a>
+          <?php } ?>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
 <section class="about-container">
   <!-- Left Side -->
