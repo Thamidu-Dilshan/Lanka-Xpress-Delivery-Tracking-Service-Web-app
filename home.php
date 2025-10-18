@@ -33,10 +33,10 @@
         <div class="auth-buttons">
           <?php if (isset($_SESSION['user'])) { ?>
             <a href="logout.php" class="login-btn">Logout</a>
-            <a href="#" class="register-btn">Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
+            <a href="profile.php" class="register-btn">Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
           <?php } else { ?>
             <a href="userlogin.php" class="login-btn">Login</a>
-            <a href="signup.html" class="register-btn">Sign Up</a>
+            <a href="registration.php" class="register-btn">Sign Up</a>
           <?php } ?>
         </div>
       </nav>
@@ -47,7 +47,7 @@
         <div class="container">
             <h1>Speed, Accuracy and Core</h1>
             <p>Your reliable courier service partner in Sri Lanka</p>
-            <a href="signup.html" class="btn">Track Your Package</a>
+            <a href="registration.php" class="btn">Track Your Package</a>
         </div>
     </section>
     
@@ -112,6 +112,14 @@
           <h3>Cash On Delivery</h3>
           <p>Our e-commerce platform offers a secure and convenient way for buyers to 
             receive quality goods and for sellers to trade confidently with guaranteed payments and hassle-free transactions.</p>
+        </div>
+      </div>
+
+       <div class="card">
+        <img src="images/services6.png" alt="Express Delivery">
+        <div class="card-content">
+          <h3>Medical Delivery</h3>
+          <p>We provide trusted medical courier services for healthcare facilities, handling urgent specimens, samples, and supplies with high-quality, reliable, and standards-aligned delivery solutions.</p>
         </div>
       </div>
     </div>

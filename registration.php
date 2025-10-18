@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    ?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,26 +16,33 @@
 <body>
 
     <header>
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">Lanka <span>Xpress</span></div>
-                <div class="phone">+94 112 123 456</div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="home.php">Home</a></li>
-                    <li><a href="aboutus.php">About Us</a></li>
-                    <li><a href="branch.php">Branch Network</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Track Your Item</a></li>
-                    <div class="auth-buttons">
-                        <li><a href="userlogin.php" class="login-btn">Login</a></li>
-                        <li><a href="signup.html" class="register-btn">Register</a></li>
-                    </div>
-                </ul>
-            </nav>
+    <div class="container">
+      <div class="header-top">
+        <div class="logo">Lanka <span>Xpress</span></div>
+        <div class="phone">+94 112 123 456</div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="home.php">Home</a></li>
+          <li><a href="aboutus.php">About Us</a></li>
+          <li><a href="branch.php">Branch Network</a></li>
+          <li><a href="contactus.php">Contact Us</a></li>
+          <li><a href="#">Track Your Item</a></li>
+        </ul>
+
+        <div class="auth-buttons">
+          <?php if (isset($_SESSION['user'])) { ?>
+            <a href="logout.php" class="login-btn">Logout</a>
+            <a href="" class="register-btn">Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
+          <?php } else { ?>
+            <a href="userlogin.php" class="login-btn">Login</a>
+            <a href="signup.html" class="register-btn">Sign Up</a>
+          <?php } ?>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
     
     <div style="width: 100%; display:flex; justify-content: center; align-items: center;margin: 50px;">
         <div class="signup-container">

@@ -5,33 +5,43 @@ $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Hardcoded admin login
+    if ($username === "admin" && $password === "1234") {
+        $_SESSION['user'] = "Admin";
+        $_SESSION['role'] = "admin";
+        echo "<script>
+            alert('Admin Login successful.');
+            window.location.href = 'admin.html';
+        </script>";
+        exit();
+    }
+
+    // User login from database
     $servername = "localhost";
-    $username = "root";
-    $password = "1234";
+    $dbusername = "root";
+    $dbpassword = "1234";
     $dbname = "delivery_db";
 
-   
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
-    
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $user_email = $_POST['username'];
-    $user_password = $_POST['password'];
-
-   
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $user_email);
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows === 1) {
         $row = $result->fetch_assoc();
-        if (password_verify($user_password, $row['password'])) {
+        if (password_verify($password, $row['password'])) {
             $_SESSION['user'] = $row['name'];
+            $_SESSION['role'] = $row['role']; // Keep role from database
             echo "<script>
                 alert('User Login successful.');
                 window.location.href = 'home.php';
@@ -49,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,25 +76,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <header>
     <div class="container">
-        <div class="header-top">
-            <div class="logo">Lanka <span>Xpress</span></div>
-            <div class="phone">+94 112 123 456</div>
+      <div class="header-top">
+        <div class="logo">Lanka <span>Xpress</span></div>
+        <div class="phone">+94 112 123 456</div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="home.php">Home</a></li>
+          <li><a href="aboutus.php">About Us</a></li>
+          <li><a href="branch.php">Branch Network</a></li>
+          <li><a href="contactus.php">Contact Us</a></li>
+          <li><a href="#">Track Your Item</a></li>
+        </ul>
+
+        <div class="auth-buttons">
+          <?php if (isset($_SESSION['user'])) { ?>
+            <a href="logout.php" class="login-btn">Logout</a>
+            <a href="#" class="register-btn">Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
+          <?php } else { ?>
+            <a href="userlogin.php" class="login-btn">Login</a>
+            <a href="registration.php" class="register-btn">Sign Up</a>
+          <?php } ?>
         </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="home.php">Home</a></li>
-                <li><a href="aboutus.php">About Us</a></li>
-                <li><a href="branch.php">Branch Network</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Track Your Item</a></li>
-                <li class="auth-buttons">
-                    <a href="userlogin.php" class="login-btn">Login</a>
-                    <a href="signup.html" class="register-btn">Register</a>
-                </li>
-            </ul>
-        </nav>
+      </nav>
     </div>
-</header>
+  </header>
 
 
 <div class="login-page">

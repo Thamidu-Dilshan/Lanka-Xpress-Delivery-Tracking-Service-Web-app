@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="footer.css" />
 </head>
 <body>
- <header>
+<header>
     <div class="container">
       <div class="header-top">
         <div class="logo">Lanka <span>Xpress</span></div>
@@ -31,10 +31,10 @@
         <div class="auth-buttons">
           <?php if (isset($_SESSION['user'])) { ?>
             <a href="logout.php" class="login-btn">Logout</a>
-            <a href="#" class="register-btn">Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
+            <a href="profile.php" class="register-btn">Welcome, <?= htmlspecialchars($_SESSION['user']) ?>!</a>
           <?php } else { ?>
             <a href="userlogin.php" class="login-btn">Login</a>
-            <a href="signup.html" class="register-btn">Sign Up</a>
+            <a href="registration.php" class="register-btn">Sign Up</a>
           <?php } ?>
         </div>
       </nav>
