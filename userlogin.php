@@ -9,55 +9,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Hardcoded admin login
-    if ($username === "admin" && $password === "1234") {
-        $_SESSION['user'] = "Admin";
-        $_SESSION['role'] = "admin";
-        echo "<script>
-            alert('Admin Login successful.');
-            window.location.href = 'admin.html';
-        </script>";
-        exit();
-    }
-
-    // User login from database
-    $servername = "localhost";
-    $dbusername = "root";
-    $dbpassword = "1234";
-    $dbname = "delivery_db";
-
-    $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $sql = "SELECT * FROM users WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows === 1) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['user'] = $row['name'];
-            $_SESSION['role'] = $row['role']; // Keep role from database
+    if ($username === "admin") {
+        if ($password === "1234") {
+            $_SESSION['user'] = "Admin";
+            $_SESSION['role'] = "admin";
             echo "<script>
-                alert('User Login successful.');
-                window.location.href = 'home.php';
+                alert('Admin Login successful.');
+                window.location.href = 'admin.html';
             </script>";
             exit();
         } else {
-            $message = "Incorrect password.";
+            $message = "Incorrect admin password.";
         }
     } else {
-        $message = "User not found.";
-    }
+        // User login from database
+        $servername = "localhost";
+        $dbusername = "root";
+        $dbpassword = "1234";
+        $dbname = "delivery_db";
 
-    $stmt->close();
-    $conn->close();
+        $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT * FROM users WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows === 1) {
+            $row = $result->fetch_assoc();
+            if (password_verify($password, $row['password'])) {
+                $_SESSION['user'] = $row['name'];
+                $_SESSION['role'] = $row['role']; // Keep role from database
+                echo "<script>
+                    alert('User Login successful.');
+                    window.location.href = 'home.php';
+                </script>";
+                exit();
+            } else {
+                $message = "Incorrect password.";
+            }
+        } else {
+            $message = "User not found.";
+        }
+
+        $stmt->close();
+        $conn->close();
+    }
 }
 ?>
+
 
 
 <!DOCTYPE html>
