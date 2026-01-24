@@ -90,7 +90,7 @@ if (!$result) {
               <button class="btn edit" type="button"><i class="fas fa-edit"></i></button>
 
               <a class="btn delete"
-              href="delete_user.php?id=<?= urlencode($row['id']) ?>"
+              href="deleteuser.php?id=<?= urlencode($row['id']) ?>"
               onclick="return confirm('Are you sure you want to delete this user?');">
               <i class="fas fa-trash"></i>
 </a>
