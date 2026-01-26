@@ -2,12 +2,12 @@
 session_start();
 require_once "db.php";
 
-if (!isset($_SESSION["customer_id"])) {
-    header("Location: user_login.php");
+if (!isset($_SESSION["user"])) {
+    header("Location: createparcel.php");
     exit();
 }
 
-$customer_id = (int)$_SESSION["customer_id"];
+$customer_id = (int)$_SESSION["user"];
 
 $msg = "";
 if (isset($_GET["msg"]) && $_GET["msg"] === "created") {
