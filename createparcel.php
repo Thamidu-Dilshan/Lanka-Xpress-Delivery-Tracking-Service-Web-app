@@ -3,10 +3,11 @@ session_start();
 require_once "db.php";
 
 // ✅ login check (must match userlogin.php)
-if (!isset($_SESSION["user"])) {
+if (!isset($_SESSION["user"]) || !isset($_SESSION["customer_id"])) {
     header("Location: userlogin.php");
     exit();
 }
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -21,8 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $receiver_phone   = trim($_POST["receiver_phone"] ?? "");
     $receiver_address = trim($_POST["receiver_address"] ?? "");
 
-    $pickup_address   = trim($_POST["pickup_address"] ?? "");
-    $delivery_address = trim($_POST["delivery_address"] ?? "");
+    
 
     $parcel_type      = trim($_POST["parcel_type"] ?? "");
     $weight           = trim($_POST["weight"] ?? "");
@@ -30,8 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sender_city   = trim($_POST["sender_city"] ?? "");
 $receiver_city = trim($_POST["receiver_city"] ?? "");
 
+
 $pay_by         = trim($_POST["pay_by"] ?? "");
 $payment_method = trim($_POST["payment_method"] ?? "");
+
+$price = (float)($_POST["amount"] ?? 0);
+if ($price < 0) { $price = 0; }
 
 
     // 1) Insert parcel (tracking_no later)
@@ -39,12 +43,12 @@ $payment_method = trim($_POST["payment_method"] ?? "");
         INSERT INTO parcels
         (customer_id, sender_name, sender_phone, sender_address,
          receiver_name, receiver_phone, receiver_address,
-         pickup_address, delivery_address, parcel_type, weight)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?)
+         parcel_type, weight,price)
+        VALUES (?,?,?,?,?,?,?,?,?,?)
     ");
 
     $stmt->bind_param(
-        "issssssssss",
+         "issssssssd",
         $customer_id,
         $sender_name,
         $sender_phone,
@@ -52,10 +56,10 @@ $payment_method = trim($_POST["payment_method"] ?? "");
         $receiver_name,
         $receiver_phone,
         $receiver_address,
-        $pickup_address,
-        $delivery_address,
+        
         $parcel_type,
-        $weight
+        $weight,
+        $price
     );
     $stmt->execute();
 

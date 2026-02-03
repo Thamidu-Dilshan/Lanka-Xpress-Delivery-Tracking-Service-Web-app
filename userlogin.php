@@ -43,24 +43,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows === 1) {
             $row = $result->fetch_assoc();
             if (password_verify($password, $row['password'])) {
-                $_SESSION['user'] = $row['name'];
-                $_SESSION['role'] = $row['role']; // Keep role from database
-                echo "<script>
-                    alert('User Login successful.');
-                    window.location.href = 'home.php';
-                </script>";
-                exit();
-            } else {
-                $message = "Incorrect password.";
-            }
-        } else {
-            $message = "User not found.";
-        }
 
-        $stmt->close();
-        $conn->close();
-    }
+    $_SESSION['user'] = $row['name'];
+    $_SESSION['role'] = $row['role'];
+
+    // ✅ IMPORTANT: createparcel.php uses this
+    $_SESSION['customer_id'] = (int)$row['id'];
+
+    echo "<script>
+        alert('User Login successful.');
+        window.location.href = 'home.php';
+    </script>";
+    exit();
 }
+        }}}
+    
+
 ?>
 
 
