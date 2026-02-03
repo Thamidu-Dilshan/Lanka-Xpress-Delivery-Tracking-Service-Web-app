@@ -29,7 +29,7 @@ $conn->close();
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Lanka Xpress - Branch Network</title>
+  <title>Lanka Xpress Delivery Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">

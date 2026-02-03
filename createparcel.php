@@ -90,10 +90,11 @@ $payment_method = trim($_POST["payment_method"] ?? "");
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Book Parcel</title>
+<title>Lanka Xpress Delivery Service</title>
   
   <link rel="stylesheet" href="common.css" />
   <link rel="stylesheet" href="createparcel.css" />
+  <link rel="stylesheet" href="footer.css" />
 
 <header>
   
@@ -361,6 +362,60 @@ $payment_method = trim($_POST["payment_method"] ?? "");
 
     </div>
   </main>
+
+  <footer class="footer" >
+        <div class="footer-main">
+          <div class="footer-section programs" style="margin-left: 100px;">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="home.php">Home</a></li>
+              <li><a href="aboutus.php">About Us</a></li>
+              <li><a href="branch.php">Branch Network</a></li>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">Track Your Item</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-section contact" style="margin-right: 100px;margin-top: 50px;">
+            <h3>Contact Us</h3>
+            <p>📞 +94 112 123 456</p>
+            <p>✉️ <a href="mailto:info@fitzone.com">info@lankaxpress@gmail.com</a></p>
+            <p>📍 No 50, Galle Rd, Colombo 6,Sri Lanka </p>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <div class="footer-logo" >
+            <a href="home.php">
+              <img src="images/Lanka.png" alt="footer logos" style="width: 100px; height: auto; margin-left: 50px;">
+              
+            </a>
+            
+
+           <div style=" margin-left: 340px;">
+            <div class="footer-copy">
+              <p>© 2025 Lanka Xpress Delivery Service. All rights reserved.</p>
+            </div>
+        
+            <div class="footer-social" >
+              <span>Follow us</span>
+              <div class="social-icons">
+                <img src="images/facebook icon.jpeg" alt="social-icons" class="icons">
+                <img src="images/insta.jpeg" alt="social-icons" class="icons">
+                <img src="images/whatsapp logo.jpeg" alt="social-icons" class="icons">
+              </div>
+            </div>
+            
+
+           </div>
+          </div>
+          </div>
+    
+
+      
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+      </footer>
 
 </body>
 <script>
