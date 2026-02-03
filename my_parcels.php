@@ -180,6 +180,24 @@ function parcelImage($parcelType, $map) {
       .right{ text-align:left; min-width:auto; }
       .thumb{ width:90px; height:90px; }
     }
+
+    .track-btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:9px 13px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#e63946,#a4161a);
+  color:#fff;
+  font-weight:600;
+  font-size:10px;
+  text-decoration:none;
+  transition:0.2s ease;
+}
+.track-btn:hover{
+  transform:translateY(-2px);
+  opacity:0.95;
+}
+
   </style>
 </head>
 <body>
@@ -224,8 +242,18 @@ function parcelImage($parcelType, $map) {
               <div class="sub"><b>Tracking No:</b> <?= htmlspecialchars($r["tracking_no"]) ?></div>
             </div>
 
+            <div class="row-bottom">
+    <a class="track-btn" href="track.php?tracking_no=<?= urlencode($r['tracking_no']) ?>">
+      Track Package
+    </a>
+  </div>
+
+
+
             <div class="right">
               <div class="price">Rs. <?= number_format($priceVal, 2) ?></div>
+
+              
 
               <span class="status <?= $statusClass ?>">
                 <?= htmlspecialchars($statusText) ?>
